@@ -135,6 +135,8 @@ class EmacsMac < Formula
       (bin/"ctags").unlink
       (share/man/man1/"ctags.1.gz").unlink
     end
+
+    system "cp /usr/local/opt/emacs-mac/Emacs.app/ /Applications/"
   end
 
   def caveats
@@ -147,15 +149,9 @@ class EmacsMac < Formula
       Emacs.app was installed to:
         #{prefix}
 
-      To link the application to default Homebrew App location:
-        brew linkapps
-      or:
-        ln -s #{prefix}/Emacs.app /Applications
-      Other ways please refer:
-        https://github.com/railwaycat/homebrew-emacsmacport/wiki/Alternative-way-of-place-Emacs.app-to-Applications-directory
-
-      For an Emacs.app CLI starter, see:
-        https://gist.github.com/4043945
+      This version has been modified by Ted Carnahan to include
+      a copy command to automatically install Emacs.app to
+      /Applications .
     EOS
   end
 
